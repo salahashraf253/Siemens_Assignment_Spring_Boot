@@ -29,9 +29,13 @@ public class TeacherController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/all/{letter}")
-    public List<Teacher> getAllTeachersByLetter(@PathVariable char letter) {
-        return teacherService.getAllTeachersByLetter(letter);
+    @GetMapping("")
+    public List<Teacher> getAllTeachersByLetter(@RequestParam(required = false) String name) {
+        if (name.equals("")) {
+            return teacherService.findAll();
+        } else {
+            return teacherService.getAllTeachersContaining(name);
+        }
     }
 
     @DeleteMapping("/{teacherId}")
