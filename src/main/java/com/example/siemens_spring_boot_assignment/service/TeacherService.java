@@ -23,11 +23,15 @@ public class TeacherService {
         return teacherRepository.findTeacherByFirstName(firstName);
     }
 
-    public List<Teacher> getAllTeachersByLetter(char letter) {
-        return teacherRepository.findTeachersByFirstNameContainsOrLastNameContains(letter, letter);
+    public List<Teacher> getAllTeachersContaining(String name) {
+        return teacherRepository.findTeachersByFirstNameContainsOrLastNameContains(name, name);
     }
 
     public void deleteTeacherById(Long teacherId) {
         teacherRepository.deleteById(teacherId);
+    }
+
+    public List<Teacher> findAll() {
+        return teacherRepository.findAll();
     }
 }
