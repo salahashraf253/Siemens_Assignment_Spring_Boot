@@ -10,6 +10,6 @@ import java.util.List;
 public interface TeacherRepository extends JpaRepository<Teacher, Long> {
     Teacher findTeacherByFirstName(String firstName);
 
-    //    List<Teacher> findTeachersByFirstNameOrLastNameContaining(char letter,char letter2);
-    List<Teacher> findTeachersByFirstNameContainsOrLastNameContains(char letter, char letter2);
+    List<Teacher> findTeachersByFirstNameContainsOrLastNameContains(String firstName, String secondName);
+
 }
