@@ -3,6 +3,7 @@ package com.example.siemens_spring_boot_assignment.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +14,9 @@ public class Teacher {
 
     @Column()
     private String lastName;
+
+    @Column()
+    private String mail;
 
     public Long getId() {
         return id;
@@ -36,5 +40,13 @@ public class Teacher {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }
