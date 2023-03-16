@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TeacherService {
@@ -23,8 +24,8 @@ public class TeacherService {
         return teacherRepository.findTeacherByFirstName(firstName);
     }
 
-    public List<Teacher> getAllTeachersContaining(String name) {
-        return teacherRepository.findTeachersByFirstNameContainsOrLastNameContains(name, name);
+    public List<Teacher> getAllTeachersContaining(String namePrefix) {
+        return teacherRepository.findTeachersByFirstNameStartsWithIgnoreCaseOrLastNameStartsWithIgnoreCase(namePrefix, namePrefix);
     }
 
     public void deleteTeacherById(Long teacherId) {
@@ -33,5 +34,13 @@ public class TeacherService {
 
     public List<Teacher> findAll() {
         return teacherRepository.findAll();
+    }
+
+    public Teacher getTeacherByMail(String mail) {
+        return teacherRepository.findTeacherByMail(mail);
+    }
+
+    public Optional<Teacher> getTeacherById(Long teacherId) {
+        return teacherRepository.findById(teacherId);
     }
 }
