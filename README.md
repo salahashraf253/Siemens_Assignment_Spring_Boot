@@ -11,4 +11,5 @@ Siemens Software Academy Assignment
 | DELETE | ```/{teacherId}``` | To delete a single teacher |
 
 ### Technologies Used
-* [Spring Boot ](https://nodejs.org/) This is an open-source Java framework for building standalone, production-ready applications that can be deployed with minimal configuration. It provides a wide range of features and capabilities that simplify the development process, including automatic configuration, dependency management, and embedded web servers.
+* [Spring Boot ](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) This is an open-source Java framework for building standalone, production-ready applications that can be deployed with minimal configuration. It provides a wide range of features and capabilities that simplify the development process, including automatic configuration, dependency management, and embedded web servers.
+* [Spring Data JPA ](https://nodejs.org/) This  is a popular Java-based framework used to simplify the development of database-driven applications. It provides a powerful set of abstractions and utilities that allow developers to easily perform common CRUD (Create, Read, Update, and Delete) operations on relational databases using Java Persistence API (JPA) annotations.
