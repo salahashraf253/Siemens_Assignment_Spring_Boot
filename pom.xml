@@ -15,7 +15,7 @@
     <name>Siemens_Spring_Boot_Assignment</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>19</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -61,6 +61,16 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-webapp-maven-plugin</artifactId>
+                <version>1.12.0</version>
+                <configuration>
+                    <appName>GpBackend</appName>
+                    <resourceGroup>FreeResource</resourceGroup>
+                    <region>East US</region>
                 </configuration>
             </plugin>
         </plugins>
